@@ -24,16 +24,18 @@ export default function Page() {
         </div>
       </header>
 
+      <div className="glass-stage">
       <div className="mx-auto max-w-6xl px-6 py-10">
         <SpeciesCatalog />
       </div>
 
-      <footer className="border-t border-border">
-        <p className="mx-auto max-w-6xl px-6 py-6 text-xs leading-relaxed text-muted-foreground">
+      <footer className="border-t border-white/15">
+        <p className="mx-auto max-w-6xl px-6 py-6 text-xs leading-relaxed text-white/70">
           Registros obtidos por armadilhas fotográficas. Nomenclatura conforme listas de referência
           vigentes; espécies marcadas como &ldquo;Identificação a confirmar&rdquo; aguardam validação.
         </p>
       </footer>
+      </div>
     </main>
   )
 }

@@ -45,7 +45,7 @@ export function SpeciesCatalog() {
         <div
           role="tablist"
           aria-label="Grupo faunístico"
-          className="inline-flex w-full rounded-full border border-border bg-card p-1 md:w-auto"
+          className="glass inline-flex w-full rounded-full p-1 md:w-auto"
         >
           {grupos.map((g) => {
             const ativo = g.id === grupo
@@ -60,15 +60,15 @@ export function SpeciesCatalog() {
                 className={cn(
                   'flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors md:flex-none',
                   ativo
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-primary',
+                    ? 'bg-white/25 text-white shadow-sm'
+                    : 'text-white/75 hover:text-white',
                 )}
               >
                 {g.rotulo}
                 <span
                   className={cn(
                     'rounded-full px-2 py-0.5 text-xs',
-                    ativo ? 'bg-accent text-accent-foreground' : 'bg-muted',
+                    ativo ? 'bg-accent text-accent-foreground' : 'bg-white/15 text-white',
                   )}
                 >
                   {total}
@@ -82,19 +82,19 @@ export function SpeciesCatalog() {
           <span className="sr-only">Buscar espécie por nome popular ou científico</span>
           <Search
             aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+            className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-white/80"
           />
           <input
             type="search"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome popular ou científico"
-            className="w-full rounded-full border border-border bg-card py-2.5 pl-11 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40"
+            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-white placeholder:text-white/65 focus:outline-none focus:ring-2 focus:ring-white/50"
           />
         </label>
       </div>
 
-      <p className="text-sm text-muted-foreground" aria-live="polite">
+      <p className="text-sm text-white/80" aria-live="polite">
         {resultados.length}{' '}
         {resultados.length === 1 ? 'espécie' : 'espécies'} de{' '}
         {grupos.find((g) => g.id === grupo)?.descricao.toLowerCase()}
@@ -110,7 +110,7 @@ export function SpeciesCatalog() {
           ))}
         </ul>
       ) : (
-        <div className="rounded-2xl border border-dashed border-border bg-card p-10 text-center text-sm text-muted-foreground">
+        <div className="glass rounded-2xl p-10 text-center text-sm text-white/80">
           Nenhuma espécie encontrada. Tente outro nome ou verifique a outra categoria.
         </div>
       )}

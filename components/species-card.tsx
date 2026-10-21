@@ -5,8 +5,8 @@ export function SpeciesCard({ especie }: { especie: Especie }) {
   const taxonomia = [especie.ordem, especie.familia].filter(Boolean).join(' · ')
 
   return (
-    <article className="flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:border-secondary hover:shadow-md hover:shadow-secondary/40">
-      <div className="relative aspect-[16/10] bg-muted">
+    <article className="glass flex w-full flex-col overflow-hidden rounded-2xl p-2 text-white transition hover:-translate-y-0.5 hover:border-white/45">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-white/10">
         <Image
           src={especie.foto || '/placeholder.svg'}
           alt={especie.descricaoFoto}
@@ -21,18 +21,16 @@ export function SpeciesCard({ especie }: { especie: Especie }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-5">
-        <h3 className="text-lg font-semibold leading-tight text-primary text-balance">
+      <div className="flex flex-1 flex-col gap-1 px-3 pb-3 pt-4">
+        <h3 className="text-lg font-semibold leading-tight text-white text-balance">
           {especie.nomePopular}
         </h3>
-        <p className="text-sm text-foreground">
+        <p className="text-sm text-white/90">
           <i className="font-medium">{especie.nomeCientifico}</i>
-          {especie.autoria && (
-            <span className="text-muted-foreground"> ({especie.autoria})</span>
-          )}
+          {especie.autoria && <span className="text-white/70"> ({especie.autoria})</span>}
         </p>
         {taxonomia && (
-          <p className="mt-3 border-t border-border pt-3 text-xs uppercase tracking-wide text-muted-foreground">
+          <p className="mt-3 border-t border-white/20 pt-3 text-xs uppercase tracking-wide text-white/70">
             {taxonomia}
           </p>
         )}
