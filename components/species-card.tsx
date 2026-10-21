@@ -5,7 +5,7 @@ export function SpeciesCard({ especie }: { especie: Especie }) {
   const taxonomia = [especie.ordem, especie.familia].filter(Boolean).join(' · ')
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:border-secondary hover:shadow-md hover:shadow-secondary/40">
+    <article className="flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:border-secondary hover:shadow-md hover:shadow-secondary/40">
       <div className="relative aspect-[16/10] bg-muted">
         <Image
           src={especie.foto || '/placeholder.svg'}
