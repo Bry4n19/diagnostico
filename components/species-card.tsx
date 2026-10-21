@@ -5,7 +5,7 @@ export function SpeciesCard({ especie }: { especie: Especie }) {
   const taxonomia = [especie.ordem, especie.familia].filter(Boolean).join(' · ')
 
   return (
-    <article className="glass flex w-full flex-col overflow-hidden rounded-2xl p-2 text-white transition hover:-translate-y-0.5 hover:border-white/45">
+    <article className="glass flex w-full flex-col overflow-hidden rounded-2xl p-2 text-white transition hover:-translate-y-0.5 hover:border-primary/60">
       <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-white/10">
         <Image
           src={especie.foto || '/placeholder.svg'}
@@ -14,11 +14,6 @@ export function SpeciesCard({ especie }: { especie: Especie }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
         />
-        {!especie.identificacaoConfirmada && (
-          <span className="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-xs font-medium text-accent-foreground shadow-sm">
-            Identificação a confirmar
-          </span>
-        )}
       </div>
 
       <div className="flex flex-1 flex-col gap-1 px-3 pb-3 pt-4">

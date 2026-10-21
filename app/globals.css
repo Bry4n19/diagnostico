@@ -47,66 +47,76 @@
 }
 
 :root {
-  color-scheme: light;
-  --background: #f4fffc;
-  --foreground: #1f4b2c;
-  --card: #ffffff;
-  --card-foreground: #1f4b2c;
-  --popover: #ffffff;
-  --popover-foreground: #1f4b2c;
-  --primary: #1f4b2c;
-  --primary-foreground: #f4fffc;
-  --secondary: #91eaaf;
-  --secondary-foreground: #1f4b2c;
-  --muted: #e6f7ee;
-  --muted-foreground: #4d7111;
-  --accent: #c3e956;
-  --accent-foreground: #1f4b2c;
+  color-scheme: dark;
+  --background: #0e0e0b;
+  --foreground: #f3f3ee;
+  --card: #161612;
+  --card-foreground: #f3f3ee;
+  --popover: #161612;
+  --popover-foreground: #f3f3ee;
+  --primary: #afe607;
+  --primary-foreground: #0e0e0b;
+  --secondary: #1f1f1a;
+  --secondary-foreground: #f3f3ee;
+  --muted: #1f1f1a;
+  --muted-foreground: #a6a69c;
+  --accent: #afe607;
+  --accent-foreground: #0e0e0b;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #d3eedd;
-  --input: #d3eedd;
-  --ring: #4d7111;
-  --chart-1: #91eaaf;
-  --chart-2: #c3e956;
-  --chart-3: #4d7111;
-  --chart-4: #1f4b2c;
-  --chart-5: #f4fffc;
+  --border: #2a2a24;
+  --input: #2a2a24;
+  --ring: #afe607;
+  --chart-1: #afe607;
+  --chart-2: #8bb805;
+  --chart-3: #678a04;
+  --chart-4: #a6a69c;
+  --chart-5: #f3f3ee;
   --radius: 0.75rem;
-  --sidebar: #f4fffc;
-  --sidebar-foreground: #1f4b2c;
-  --sidebar-primary: #1f4b2c;
-  --sidebar-primary-foreground: #f4fffc;
-  --sidebar-accent: #91eaaf;
-  --sidebar-accent-foreground: #1f4b2c;
-  --sidebar-border: #d3eedd;
-  --sidebar-ring: #4d7111;
+  --sidebar: #0e0e0b;
+  --sidebar-foreground: #f3f3ee;
+  --sidebar-primary: #afe607;
+  --sidebar-primary-foreground: #0e0e0b;
+  --sidebar-accent: #1f1f1a;
+  --sidebar-accent-foreground: #f3f3ee;
+  --sidebar-border: #2a2a24;
+  --sidebar-ring: #afe607;
 }
 
-@utility hero-gradient {
-  background-color: #1f4b2c;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@utility hero-glow {
+  background-color: #0e0e0b;
   background-image:
-    radial-gradient(ellipse 60% 80% at 10% 100%, rgb(145 234 175 / 0.35), transparent 70%),
-    radial-gradient(ellipse 50% 70% at 90% 0%, rgb(195 233 86 / 0.3), transparent 70%),
-    linear-gradient(135deg, #1f4b2c 0%, #2f5e1e 55%, #4d7111 100%);
+    radial-gradient(ellipse 50% 60% at 85% 10%, rgb(175 230 7 / 0.14), transparent 70%),
+    linear-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
 }
 
 @utility glass-stage {
-  background-color: #163a22;
+  background-color: #0e0e0b;
   background-image:
-    radial-gradient(circle at 12% 18%, rgb(145 234 175 / 0.55), transparent 32%),
-    radial-gradient(circle at 88% 30%, rgb(195 233 86 / 0.45), transparent 30%),
-    radial-gradient(circle at 30% 85%, rgb(77 113 17 / 0.9), transparent 38%),
-    radial-gradient(circle at 80% 90%, rgb(145 234 175 / 0.35), transparent 34%),
-    linear-gradient(160deg, #1f4b2c 0%, #2f5e1e 50%, #1f4b2c 100%);
+    radial-gradient(circle at 10% 20%, rgb(175 230 7 / 0.22), transparent 30%),
+    radial-gradient(circle at 90% 35%, rgb(175 230 7 / 0.14), transparent 28%),
+    radial-gradient(circle at 40% 95%, rgb(175 230 7 / 0.12), transparent 32%),
+    linear-gradient(180deg, #0e0e0b 0%, #13130f 50%, #0e0e0b 100%);
   background-attachment: fixed;
 }
 
 @utility glass {
   background-image: linear-gradient(
     145deg,
-    rgb(255 255 255 / 0.22) 0%,
-    rgb(255 255 255 / 0.08) 60%,
-    rgb(255 255 255 / 0.12) 100%
+    rgb(255 255 255 / 0.12) 0%,
+    rgb(255 255 255 / 0.04) 60%,
+    rgb(255 255 255 / 0.07) 100%
   );
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);

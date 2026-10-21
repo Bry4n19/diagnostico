@@ -60,15 +60,15 @@ export function SpeciesCatalog() {
                 className={cn(
                   'flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors md:flex-none',
                   ativo
-                    ? 'bg-white/25 text-white shadow-sm'
-                    : 'text-white/75 hover:text-white',
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-white/75 hover:text-primary',
                 )}
               >
                 {g.rotulo}
                 <span
                   className={cn(
                     'rounded-full px-2 py-0.5 text-xs',
-                    ativo ? 'bg-accent text-accent-foreground' : 'bg-white/15 text-white',
+                    ativo ? 'bg-primary-foreground/15 text-primary-foreground' : 'bg-white/15 text-white',
                   )}
                 >
                   {total}
@@ -89,7 +89,7 @@ export function SpeciesCatalog() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome popular ou científico"
-            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-white placeholder:text-white/65 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-white placeholder:text-white/65 focus:outline-none focus:ring-2 focus:ring-primary/70"
           />
         </label>
       </div>
