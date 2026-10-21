@@ -89,9 +89,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Paca',
     nomeCientifico: 'Cuniculus paca',
-    autoria: 'Linnaeus, 1766',
-    familia: 'Cuniculidae',
-    ordem: 'Rodentia',
     foto: '/especies/paca.png',
     descricaoFoto:
       'Roedor de porte médio com fileiras de manchas claras na lateral do corpo, registrado à noite por armadilha fotográfica com infravermelho.',
@@ -102,9 +99,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Gato-do-mato-pequeno',
     nomeCientifico: 'Leopardus guttulus',
-    autoria: 'Hensel, 1872',
-    familia: 'Felidae',
-    ordem: 'Carnivora',
     foto: '/especies/gato-do-mato.png',
     descricaoFoto:
       'Pequeno felino de pelagem manchada caminhando entre a vegetação, com os olhos refletindo a luz infravermelho da armadilha fotográfica à noite.',
@@ -115,9 +109,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Tatu-galinha',
     nomeCientifico: 'Dasypus novemcinctus',
-    autoria: 'Linnaeus, 1758',
-    familia: 'Dasypodidae',
-    ordem: 'Cingulata',
     foto: '/especies/tatu-galinha.png',
     descricaoFoto:
       'Tatu com carapaça de cintas transversais e cauda longa forrageando no folhiço, registrado à noite por armadilha fotográfica com infravermelho.',
@@ -128,9 +119,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Gambá',
     nomeCientifico: 'Didelphis aurita',
-    autoria: 'Wied-Neuwied, 1826',
-    familia: 'Didelphidae',
-    ordem: 'Didelphimorphia',
     foto: '/especies/gamba.png',
     descricaoFoto:
       'Marsupial de pelagem escura, face clara com listras e cauda longa enrolada, caminhando no folhiço à noite diante da armadilha fotográfica.',
@@ -141,9 +129,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Cachorro-do-mato',
     nomeCientifico: 'Cerdocyon thous',
-    autoria: 'Linnaeus, 1766',
-    familia: 'Canidae',
-    ordem: 'Carnivora',
     foto: '/especies/cachorro-do-mato.png',
     descricaoFoto:
       'Canídeo de pelagem acinzentada com garganta clara e orelhas eretas em meio a capim alto, com um segundo indivíduo ao fundo, registrado de dia por armadilha fotográfica.',
@@ -154,9 +139,6 @@ export const especies: Especie[] = [
     grupo: 'mastofauna',
     nomePopular: 'Capivara',
     nomeCientifico: 'Hydrochoerus hydrochaeris',
-    autoria: 'Linnaeus, 1766',
-    familia: 'Caviidae',
-    ordem: 'Rodentia',
     foto: '/especies/capivara.png',
     descricaoFoto:
       'Grande roedor de focinho largo e orelhas pequenas sentado ao lado de um tronco caído, registrado à noite por armadilha fotográfica com infravermelho.',

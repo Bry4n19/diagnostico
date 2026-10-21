@@ -27,8 +27,8 @@ export const site: Site = {
     width: 965,
     height: 925,
   },
-  instagramUrl: 'https://www.instagram.com/faunacjba',
-  instagramUsuario: '@faunacjba',
+  instagramUrl: 'https://www.instagram.com/faunacjb',
+  instagramUsuario: '@faunacjb',
   areaDeEstudo: {
     nome: 'ETEC Cônego José Bento',
     local: 'Jacareí - SP',
