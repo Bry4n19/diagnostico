@@ -82,6 +82,14 @@
   --sidebar-ring: #4d7111;
 }
 
+@utility hero-gradient {
+  background-color: #1f4b2c;
+  background-image:
+    radial-gradient(ellipse 60% 80% at 10% 100%, rgb(145 234 175 / 0.35), transparent 70%),
+    radial-gradient(ellipse 50% 70% at 90% 0%, rgb(195 233 86 / 0.3), transparent 70%),
+    linear-gradient(135deg, #1f4b2c 0%, #2f5e1e 55%, #4d7111 100%);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

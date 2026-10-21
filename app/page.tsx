@@ -3,7 +3,7 @@ import { SpeciesCatalog } from '@/components/species-catalog'
 export default function Page() {
   return (
     <main className="min-h-screen bg-background">
-      <header className="border-b border-border bg-primary text-primary-foreground">
+      <header className="hero-gradient text-primary-foreground">
         <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             Diagnóstico de fauna · TCC
@@ -15,6 +15,12 @@ export default function Page() {
             Aves e mamíferos registrados no levantamento de campo. Cada card apresenta o nome
             popular e o nome científico da espécie, com autoria e classificação taxonômica.
           </p>
+        </div>
+        <div className="flex h-1.5" aria-hidden="true">
+          <span className="flex-1 bg-[#91eaaf]" />
+          <span className="flex-1 bg-[#c3e956]" />
+          <span className="flex-1 bg-[#4d7111]" />
+          <span className="flex-1 bg-[#1f4b2c]" />
         </div>
       </header>
 
