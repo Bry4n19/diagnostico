@@ -2,6 +2,7 @@ import { SpeciesCatalog } from '@/components/species-catalog'
 import { SiteHeader, SiteLogo } from '@/components/site-header'
 import { AboutSection } from '@/components/about-section'
 import { InstagramSection } from '@/components/instagram-section'
+import { BackToTop } from '@/components/back-to-top'
 
 export default function Page() {
   return (
@@ -56,6 +57,7 @@ export default function Page() {
           </p>
         </div>
       </footer>
+      <BackToTop />
     </>
   )
 }
