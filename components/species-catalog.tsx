@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { Search } from 'lucide-react'
+import { AudioLines, Search } from 'lucide-react'
 import { especies, type Grupo } from '@/lib/especies'
 import { SpeciesCard } from '@/components/species-card'
 import { cn } from '@/lib/utils'
@@ -100,6 +100,17 @@ export function SpeciesCatalog() {
         {grupos.find((g) => g.id === grupo)?.descricao.toLowerCase()}
         {termo && <> para &ldquo;{busca.trim()}&rdquo;</>}
       </p>
+
+      {grupo === 'avifauna' && (
+        <div className="glass flex items-start gap-3 rounded-2xl p-4 text-sm text-white/90">
+          <AudioLines aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
+          <p className="leading-relaxed text-pretty">
+            As aves foram identificadas por meio do som (vocalizações e cantos), com o auxílio dos aplicativos{' '}
+            <span className="font-semibold text-white">eBird</span> e{' '}
+            <span className="font-semibold text-white">Merlin Bird ID</span>.
+          </p>
+        </div>
+      )}
 
       {resultados.length > 0 ? (
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
