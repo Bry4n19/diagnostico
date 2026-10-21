@@ -21,7 +21,12 @@ type Site = {
 
 export const site: Site = {
   nome: 'Catálogo de Espécies da Fauna',
-  logo: null,
+  logo: {
+    src: '/logo.png',
+    alt: 'Logo do Catálogo de Espécies da Fauna: silhuetas de um cachorro-do-mato, um mamífero, uma capivara e uma ave em verde-claro',
+    width: 965,
+    height: 925,
+  },
   instagramUrl: 'https://www.instagram.com/faunacjba',
   instagramUsuario: '@faunacjba',
   areaDeEstudo: {

@@ -69,9 +69,9 @@ export const especies: Especie[] = [
       ['tico-tico', 'Tico-tico', 'Zonotrichia capensis', 'Pequena ave com cabeça listrada de cinza e preto e colar ferrugíneo na nuca, pousada em um galho.'],
       ['juruviara', 'Juruviara', 'Vireo chivi', 'Pequena ave de dorso verde-oliva, ventre claro e sobrancelha branca, pousada em um galho.'],
       ['passaro-preto', 'Pássaro-preto', 'Gnorimopsar chopi', 'Ave inteiramente preta de bico pontiagudo, pousada em um galho seco.'],
-      ['andorinha-pequena-de-casa', 'Andorinha-pequena-de-casa', 'Pygochelidon cyanoleuca', ''],
-      ['suiriri', 'Suiriri', 'Tyrannus melancholicus', ''],
-      ['andorinhao-do-temporal', 'Andorinhão-do-temporal', 'Chaetura meridionalis', ''],
+      ['andorinha-pequena-de-casa', 'Andorinha-pequena-de-casa', 'Pygochelidon cyanoleuca', 'Pequena andorinha de dorso azul metálico e garganta branca, pousada em um arame.'],
+      ['suiriri', 'Suiriri', 'Tyrannus melancholicus', 'Ave de cabeça cinza, dorso pardo e ventre amarelo vivo, pousada em um galho seco.'],
+      ['andorinhao-do-temporal', 'Andorinhão-do-temporal', 'Chaetura meridionalis', 'Andorinhão pardo-escuro de asas longas e curvas, em pleno voo contra o céu azul.'],
     ] as const
   ).map(
     ([id, nomePopular, nomeCientifico, descricaoFoto]): Especie => ({
