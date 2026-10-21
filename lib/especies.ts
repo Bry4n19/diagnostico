@@ -36,6 +36,19 @@ export const especies: Especie[] = [
     identificacaoConfirmada: false,
   },
   {
+    id: 'carcara',
+    grupo: 'avifauna',
+    nomePopular: 'Carcará',
+    nomeCientifico: 'Caracara plancus',
+    autoria: 'Miller, 1777',
+    familia: 'Falconidae',
+    ordem: 'Falconiformes',
+    foto: '/especies/carcara.png',
+    descricaoFoto:
+      'Ave de rapina em perfil, com penas escuras no alto da cabeça, bico curvo azulado e pescoço com penas claras rajadas, à beira da água.',
+    identificacaoConfirmada: false,
+  },
+  {
     id: 'paca',
     grupo: 'mastofauna',
     nomePopular: 'Paca',
