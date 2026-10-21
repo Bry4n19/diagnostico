@@ -17,7 +17,7 @@ export function SiteLogo({ className }: { className?: string }) {
       alt={site.logo.alt}
       width={site.logo.width}
       height={site.logo.height}
-      className={className ?? 'h-10 w-auto'}
+      className={`${className ?? 'h-10 w-auto'} shrink-0 self-start object-contain`}
       priority
     />
   )
