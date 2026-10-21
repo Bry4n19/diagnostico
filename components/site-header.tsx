@@ -2,9 +2,9 @@ import Image from 'next/image'
 import { site } from '@/lib/site'
 
 const links = [
-  { href: '#catalogo', rotulo: 'Catálogo' },
-  { href: '#sobre', rotulo: 'Sobre o TCC' },
-  { href: '#instagram', rotulo: 'Instagram' },
+  { href: '/#catalogo', rotulo: 'Catálogo' },
+  { href: '/#sobre', rotulo: 'Sobre o TCC' },
+  { href: '/#instagram', rotulo: 'Instagram' },
 ]
 
 export function SiteLogo({ className }: { className?: string }) {
@@ -27,7 +27,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-        <a href="#inicio" className="flex items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+        <a href="/#inicio" className="flex items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
           <SiteLogo />
         </a>
         <nav aria-label="Navegação principal" className="hidden sm:block">

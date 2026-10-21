@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { AudioLines, Search } from 'lucide-react'
 import { especies, type Grupo } from '@/lib/especies'
 import { SpeciesCard } from '@/components/species-card'
@@ -16,8 +17,36 @@ function normalizar(texto: string) {
 }
 
 export function SpeciesCatalog() {
-  const [grupo, setGrupo] = useState<Grupo>('avifauna')
-  const [busca, setBusca] = useState('')
+  const params = useSearchParams()
+  const [grupo, setGrupoState] = useState<Grupo>(
+    params.get('grupo') === 'mastofauna' ? 'mastofauna' : 'avifauna',
+  )
+  const [busca, setBuscaState] = useState(params.get('q') ?? '')
+
+  const query = useMemo(() => {
+    const p = new URLSearchParams()
+    if (grupo !== 'avifauna') p.set('grupo', grupo)
+    if (busca.trim()) p.set('q', busca.trim())
+    return p.toString()
+  }, [grupo, busca])
+
+  function sincronizarUrl(novoGrupo: Grupo, novaBusca: string) {
+    const p = new URLSearchParams()
+    if (novoGrupo !== 'avifauna') p.set('grupo', novoGrupo)
+    if (novaBusca.trim()) p.set('q', novaBusca.trim())
+    const qs = p.toString()
+    window.history.replaceState(null, '', `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`)
+  }
+
+  function setGrupo(g: Grupo) {
+    setGrupoState(g)
+    sincronizarUrl(g, busca)
+  }
+
+  function setBusca(b: string) {
+    setBuscaState(b)
+    sincronizarUrl(grupo, b)
+  }
 
   const termo = normalizar(busca.trim())
 
@@ -116,7 +145,7 @@ export function SpeciesCatalog() {
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {resultados.map((e) => (
             <li key={e.id} className="flex">
-              <SpeciesCard especie={e} />
+              <SpeciesCard especie={e} query={query} />
             </li>
           ))}
         </ul>

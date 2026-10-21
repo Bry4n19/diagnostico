@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { MapPin } from 'lucide-react'
 import { especies } from '@/lib/especies'
 import { site } from '@/lib/site'
+import { AvisoMetodologico } from '@/components/methodology-note'
 
 export function AboutSection() {
   const { areaDeEstudo, sobre } = site
@@ -39,6 +40,11 @@ export function AboutSection() {
                 {paragrafo}
               </p>
             ))}
+            <AvisoMetodologico className="max-w-prose" />
+            <p className="max-w-prose text-sm leading-relaxed text-muted-foreground text-pretty">
+              Nomenclatura e autoria das espécies conforme Pacheco et al. (2021, CBRO) para aves e Abreu et al.
+              (2023, SBMz) para mamíferos. Status de conservação segundo a Lista Vermelha da IUCN.
+            </p>
           </div>
         </div>
 

@@ -1,8 +1,11 @@
+import { Suspense } from 'react'
 import { SpeciesCatalog } from '@/components/species-catalog'
-import { SiteHeader, SiteLogo } from '@/components/site-header'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 import { AboutSection } from '@/components/about-section'
 import { InstagramSection } from '@/components/instagram-section'
 import { BackToTop } from '@/components/back-to-top'
+import { AvisoMetodologico } from '@/components/methodology-note'
 
 export default function Page() {
   return (
@@ -35,12 +38,15 @@ export default function Page() {
                 Sobre o TCC
               </a>
             </div>
+            <AvisoMetodologico className="mt-10 max-w-3xl" />
           </div>
         </section>
 
         <div id="catalogo" className="glass-stage scroll-mt-16">
           <div className="mx-auto max-w-6xl px-6 py-12">
-            <SpeciesCatalog />
+            <Suspense>
+              <SpeciesCatalog />
+            </Suspense>
           </div>
         </div>
 
@@ -48,15 +54,7 @@ export default function Page() {
         <InstagramSection />
       </main>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 md:flex-row md:items-center md:justify-between">
-          <SiteLogo className="h-8 w-auto" />
-          <p className="text-xs leading-relaxed text-muted-foreground">
-            Registros obtidos por armadilhas fotográficas. Nomenclatura conforme listas de
-            referência vigentes.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
       <BackToTop />
     </>
   )
