@@ -15,7 +15,7 @@ export default function Page() {
         <section className="hero-glow">
           <div className="mx-auto max-w-6xl px-6 pb-12 pt-16 md:pb-16 md:pt-24">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
-              Diagnóstica de fauna · TCC
+              Diagnóstico de fauna · TCC
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-balance md:text-6xl">
               Catálogo de Espécies da <span className="text-primary">Fauna</span>
