@@ -43,8 +43,6 @@ export type Especie = {
   credito?: Credito
   visaoGeral: string
   curiosidade: string
-  /** Mantenha false até a identificação ser validada pelo orientador/especialista. */
-  identificacaoConfirmada: boolean
 }
 
 /*
@@ -218,7 +216,6 @@ function criar(grupo: Grupo) {
     credito: fotosProprias.has(id) ? registroProprio : undefined,
     visaoGeral,
     curiosidade,
-    identificacaoConfirmada: false,
   })
 }
 

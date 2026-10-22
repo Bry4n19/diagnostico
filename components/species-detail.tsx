@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { AudioLines, Camera, ExternalLink, Info, MapPin } from 'lucide-react'
+import { AudioLines, Camera, ExternalLink, MapPin } from 'lucide-react'
 import { referenciasDe, type Especie } from '@/lib/especies'
 import { site } from '@/lib/site'
 import { BackLink } from '@/components/back-link'
@@ -86,13 +86,6 @@ export function SpeciesDetail({ especie }: { especie: Especie }) {
               {ave
                 ? 'Método de registro: identificação por vocalização (cantos e chamados), com apoio dos aplicativos eBird e Merlin Bird ID.'
                 : 'Método de registro: armadilha fotográfica instalada na área de estudo.'}
-            </span>
-          </p>
-          <p className="flex items-start gap-3 leading-relaxed text-muted-foreground">
-            <Info aria-hidden="true" className="mt-1 size-4 shrink-0 text-primary" />
-            <span>
-              Situação da identificação:{' '}
-              {especie.identificacaoConfirmada ? 'validada por especialista.' : 'aguardando validação do orientador.'}
             </span>
           </p>
         </div>
