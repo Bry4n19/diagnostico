@@ -46,10 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" data-theme="dark" className={geist.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: scriptTemaInicial }} />
-      </head>
       <body className="font-sans antialiased">
+        <script dangerouslySetInnerHTML={{ __html: scriptTemaInicial }} />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
