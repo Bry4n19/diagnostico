@@ -5,9 +5,9 @@ import { CreditoFoto, IucnBadge } from '@/components/species-meta'
 
 export function SpeciesCard({ especie, query }: { especie: Especie; query: string }) {
   return (
-    <article className="glass group relative flex w-full flex-col overflow-hidden rounded-2xl p-2 text-white transition hover:-translate-y-0.5 hover:border-primary/60 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
+    <article className="glass group relative flex w-full flex-col overflow-hidden rounded-2xl p-2 text-on-glass transition hover:-translate-y-0.5 hover:border-primary/60 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
       <figure className="flex flex-col gap-1.5">
-        <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-white/10">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-on-glass/10">
           <Image
             src={especie.foto || '/placeholder.svg'}
             alt={especie.descricaoFoto}
@@ -24,7 +24,7 @@ export function SpeciesCard({ especie, query }: { especie: Especie; query: strin
 
       <div className="flex flex-1 flex-col gap-1 px-3 pb-3 pt-3">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-semibold leading-tight text-white text-balance">
+          <h3 className="text-lg font-semibold leading-tight text-on-glass text-balance">
             <Link
               href={`/especie/${especie.id}${query ? `?${query}` : ''}`}
               className="after:absolute after:inset-0 focus-visible:outline-none"
@@ -34,11 +34,11 @@ export function SpeciesCard({ especie, query }: { especie: Especie; query: strin
           </h3>
           <IucnBadge status={especie.iucn} />
         </div>
-        <p className="text-sm text-white/90">
+        <p className="text-sm text-on-glass/90">
           <i className="font-medium">{especie.nomeCientifico}</i>{' '}
-          <span className="text-white/70">{especie.autoria}</span>
+          <span className="text-on-glass/70">{especie.autoria}</span>
         </p>
-        <p className="mt-auto border-t border-white/20 pt-3 text-xs uppercase tracking-wide text-white/70">
+        <p className="mt-auto border-t border-on-glass/20 pt-3 text-xs uppercase tracking-wide text-on-glass/70">
           {especie.ordem} · {especie.familia}
         </p>
       </div>

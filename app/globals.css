@@ -2,10 +2,30 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is([data-theme='dark'] *));
 
 @theme inline {
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --color-on-glass: var(--on-glass);
+  --color-media-surface: var(--media-surface);
+  --color-iucn-lc: var(--iucn-lc);
+  --color-iucn-lc-fg: var(--iucn-lc-fg);
+  --color-iucn-lc-ring: var(--iucn-lc-ring);
+  --color-iucn-nt: var(--iucn-nt);
+  --color-iucn-nt-fg: var(--iucn-nt-fg);
+  --color-iucn-nt-ring: var(--iucn-nt-ring);
+  --color-iucn-vu: var(--iucn-vu);
+  --color-iucn-vu-fg: var(--iucn-vu-fg);
+  --color-iucn-vu-ring: var(--iucn-vu-ring);
+  --color-iucn-en: var(--iucn-en);
+  --color-iucn-en-fg: var(--iucn-en-fg);
+  --color-iucn-en-ring: var(--iucn-en-ring);
+  --color-iucn-cr: var(--iucn-cr);
+  --color-iucn-cr-fg: var(--iucn-cr-fg);
+  --color-iucn-cr-ring: var(--iucn-cr-ring);
+  --color-iucn-dd: var(--iucn-dd);
+  --color-iucn-dd-fg: var(--iucn-dd-fg);
+  --color-iucn-dd-ring: var(--iucn-dd-ring);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,8 +66,41 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
+:root,
+[data-theme='dark'] {
   color-scheme: dark;
+  --on-glass: #ffffff;
+  --media-surface: #ffffff;
+  --stage: #0e0e0b;
+  --stage-mid: #13130f;
+  --glow-strong: rgb(175 230 7 / 0.22);
+  --glow-medium: rgb(175 230 7 / 0.14);
+  --glow-soft: rgb(175 230 7 / 0.12);
+  --grid-line: rgb(255 255 255 / 0.03);
+  --glass-tint-1: rgb(255 255 255 / 0.12);
+  --glass-tint-2: rgb(255 255 255 / 0.04);
+  --glass-tint-3: rgb(255 255 255 / 0.07);
+  --glass-border: rgb(255 255 255 / 0.28);
+  --glass-inset: rgb(255 255 255 / 0.35);
+  --glass-shadow: rgb(0 0 0 / 0.35);
+  --iucn-lc: oklch(69.6% 0.17 162.48);
+  --iucn-lc-fg: oklch(90.5% 0.093 164.15);
+  --iucn-lc-ring: oklch(76.5% 0.177 163.223);
+  --iucn-nt: oklch(76.8% 0.233 130.85);
+  --iucn-nt-fg: oklch(93.8% 0.127 124.321);
+  --iucn-nt-ring: oklch(84.1% 0.238 128.85);
+  --iucn-vu: oklch(76.9% 0.188 70.08);
+  --iucn-vu-fg: oklch(92.4% 0.12 95.746);
+  --iucn-vu-ring: oklch(82.8% 0.189 84.429);
+  --iucn-en: oklch(70.5% 0.213 47.604);
+  --iucn-en-fg: oklch(90.1% 0.076 70.697);
+  --iucn-en-ring: oklch(75% 0.183 55.934);
+  --iucn-cr: oklch(63.7% 0.237 25.331);
+  --iucn-cr-fg: oklch(88.5% 0.062 18.334);
+  --iucn-cr-ring: oklch(70.4% 0.191 22.216);
+  --iucn-dd: oklch(55.2% 0.016 285.938);
+  --iucn-dd-fg: oklch(92% 0.004 286.32);
+  --iucn-dd-ring: oklch(70.5% 0.015 286.067);
   --background: #0e0e0b;
   --foreground: #f3f3ee;
   --card: #161612;
@@ -82,6 +135,73 @@
   --sidebar-ring: #afe607;
 }
 
+[data-theme='light'] {
+  color-scheme: light;
+  --on-glass: #16160f;
+  --media-surface: #ffffff;
+  --stage: #f7f7f2;
+  --stage-mid: #eeefe6;
+  --glow-strong: rgb(85 122 0 / 0.16);
+  --glow-medium: rgb(85 122 0 / 0.1);
+  --glow-soft: rgb(85 122 0 / 0.08);
+  --grid-line: rgb(22 22 15 / 0.05);
+  --glass-tint-1: rgb(255 255 255 / 0.85);
+  --glass-tint-2: rgb(255 255 255 / 0.55);
+  --glass-tint-3: rgb(255 255 255 / 0.7);
+  --glass-border: rgb(22 22 15 / 0.12);
+  --glass-inset: rgb(255 255 255 / 0.9);
+  --glass-shadow: rgb(22 22 15 / 0.12);
+  --iucn-lc: oklch(69.6% 0.17 162.48);
+  --iucn-lc-fg: oklch(43.2% 0.095 166.913);
+  --iucn-lc-ring: oklch(59.6% 0.145 163.225);
+  --iucn-nt: oklch(76.8% 0.233 130.85);
+  --iucn-nt-fg: oklch(45.3% 0.124 130.933);
+  --iucn-nt-ring: oklch(64.8% 0.2 131.684);
+  --iucn-vu: oklch(76.9% 0.188 70.08);
+  --iucn-vu-fg: oklch(47.3% 0.137 46.201);
+  --iucn-vu-ring: oklch(66.6% 0.179 58.318);
+  --iucn-en: oklch(70.5% 0.213 47.604);
+  --iucn-en-fg: oklch(47% 0.157 37.304);
+  --iucn-en-ring: oklch(64.6% 0.222 41.116);
+  --iucn-cr: oklch(63.7% 0.237 25.331);
+  --iucn-cr-fg: oklch(44.4% 0.177 26.899);
+  --iucn-cr-ring: oklch(57.7% 0.245 27.325);
+  --iucn-dd: oklch(55.2% 0.016 285.938);
+  --iucn-dd-fg: oklch(27.4% 0.006 286.033);
+  --iucn-dd-ring: oklch(44.2% 0.017 285.786);
+  --background: #f7f7f2;
+  --foreground: #16160f;
+  --card: #ffffff;
+  --card-foreground: #16160f;
+  --popover: #ffffff;
+  --popover-foreground: #16160f;
+  --primary: #557a00;
+  --primary-foreground: #ffffff;
+  --secondary: #ebebe4;
+  --secondary-foreground: #16160f;
+  --muted: #ebebe4;
+  --muted-foreground: #5c5c52;
+  --accent: #557a00;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d9d9d0;
+  --input: #d9d9d0;
+  --ring: #557a00;
+  --chart-1: #557a00;
+  --chart-2: #6f9a00;
+  --chart-3: #8bb805;
+  --chart-4: #5c5c52;
+  --chart-5: #16160f;
+  --sidebar: #f7f7f2;
+  --sidebar-foreground: #16160f;
+  --sidebar-primary: #557a00;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ebebe4;
+  --sidebar-accent-foreground: #16160f;
+  --sidebar-border: #d9d9d0;
+  --sidebar-ring: #557a00;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -93,40 +213,55 @@ html {
 }
 
 @utility hero-glow {
-  background-color: #0e0e0b;
+  background-color: var(--stage);
   background-image:
-    radial-gradient(ellipse 50% 60% at 85% 10%, rgb(175 230 7 / 0.14), transparent 70%),
-    linear-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+    radial-gradient(ellipse 50% 60% at 85% 10%, var(--glow-medium), transparent 70%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: auto, 48px 48px, 48px 48px;
 }
 
 @utility glass-stage {
-  background-color: #0e0e0b;
+  background-color: var(--stage);
   background-image:
-    radial-gradient(circle at 10% 20%, rgb(175 230 7 / 0.22), transparent 30%),
-    radial-gradient(circle at 90% 35%, rgb(175 230 7 / 0.14), transparent 28%),
-    radial-gradient(circle at 40% 95%, rgb(175 230 7 / 0.12), transparent 32%),
-    linear-gradient(180deg, #0e0e0b 0%, #13130f 50%, #0e0e0b 100%);
+    radial-gradient(circle at 10% 20%, var(--glow-strong), transparent 30%),
+    radial-gradient(circle at 90% 35%, var(--glow-medium), transparent 28%),
+    radial-gradient(circle at 40% 95%, var(--glow-soft), transparent 32%),
+    linear-gradient(180deg, var(--stage) 0%, var(--stage-mid) 50%, var(--stage) 100%);
   background-attachment: fixed;
 }
 
 @utility glass {
   background-image: linear-gradient(
     145deg,
-    rgb(255 255 255 / 0.12) 0%,
-    rgb(255 255 255 / 0.04) 60%,
-    rgb(255 255 255 / 0.07) 100%
+    var(--glass-tint-1) 0%,
+    var(--glass-tint-2) 60%,
+    var(--glass-tint-3) 100%
   );
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgb(255 255 255 / 0.28);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.35),
-    0 10px 30px -10px rgb(0 0 0 / 0.35);
+    inset 0 1px 0 var(--glass-inset),
+    0 10px 30px -10px var(--glass-shadow);
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    transition:
+      background-color 200ms,
+      color 200ms,
+      border-color 200ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none;
+    }
+  }
   * {
     @apply border-border outline-ring/50;
   }

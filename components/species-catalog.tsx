@@ -90,14 +90,14 @@ export function SpeciesCatalog() {
                   'flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors md:flex-none',
                   ativo
                     ? 'bg-primary text-primary-foreground shadow-sm'
-                    : 'text-white/75 hover:text-primary',
+                    : 'text-on-glass/75 hover:text-primary',
                 )}
               >
                 {g.rotulo}
                 <span
                   className={cn(
                     'rounded-full px-2 py-0.5 text-xs',
-                    ativo ? 'bg-primary-foreground/15 text-primary-foreground' : 'bg-white/15 text-white',
+                    ativo ? 'bg-primary-foreground/15 text-primary-foreground' : 'bg-on-glass/15 text-on-glass',
                   )}
                 >
                   {total}
@@ -111,19 +111,19 @@ export function SpeciesCatalog() {
           <span className="sr-only">Buscar espécie por nome popular ou científico</span>
           <Search
             aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-white/80"
+            className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-on-glass/80"
           />
           <input
             type="search"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome popular ou científico"
-            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-white placeholder:text-white/65 focus:outline-none focus:ring-2 focus:ring-primary/70"
+            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-on-glass placeholder:text-on-glass/65 focus:outline-none focus:ring-2 focus:ring-primary/70"
           />
         </label>
       </div>
 
-      <p className="text-sm text-white/80" aria-live="polite">
+      <p className="text-sm text-on-glass/80" aria-live="polite">
         {resultados.length}{' '}
         {resultados.length === 1 ? 'espécie' : 'espécies'} de{' '}
         {grupos.find((g) => g.id === grupo)?.descricao.toLowerCase()}
@@ -131,12 +131,12 @@ export function SpeciesCatalog() {
       </p>
 
       {grupo === 'avifauna' && (
-        <div className="glass flex items-start gap-3 rounded-2xl p-4 text-sm text-white/90">
+        <div className="glass flex items-start gap-3 rounded-2xl p-4 text-sm text-on-glass/90">
           <AudioLines aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary" />
           <p className="leading-relaxed text-pretty">
             As aves foram identificadas por meio do som (vocalizações e cantos), com o auxílio dos aplicativos{' '}
-            <span className="font-semibold text-white">eBird</span> e{' '}
-            <span className="font-semibold text-white">Merlin Bird ID</span>.
+            <span className="font-semibold text-on-glass">eBird</span> e{' '}
+            <span className="font-semibold text-on-glass">Merlin Bird ID</span>.
           </p>
         </div>
       )}
@@ -150,7 +150,7 @@ export function SpeciesCatalog() {
           ))}
         </ul>
       ) : (
-        <div className="glass rounded-2xl p-10 text-center text-sm text-white/80">
+        <div className="glass rounded-2xl p-10 text-center text-sm text-on-glass/80">
           Nenhuma espécie encontrada. Tente outro nome ou verifique a outra categoria.
         </div>
       )}

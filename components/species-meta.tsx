@@ -21,10 +21,10 @@ export function IucnBadge({ status, completo = false }: { status: StatusIUCN; co
 
 export function CreditoFoto({ credito, className }: { credito?: Credito; className?: string }) {
   if (!credito) {
-    return <p className={cn('text-xs text-white/60', className)}>Crédito da foto: origem a confirmar</p>
+    return <p className={cn('text-xs text-on-glass/60', className)}>Crédito da foto: origem a confirmar</p>
   }
   return (
-    <p className={cn('text-xs text-white/60', className)}>
+    <p className={cn('text-xs text-on-glass/60', className)}>
       Foto:{' '}
       {credito.url ? (
         <a href={credito.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">

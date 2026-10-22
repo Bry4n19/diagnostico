@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { site } from '@/lib/site'
+import { ToggleTema } from '@/components/toggle-tema'
 
 const links = [
   { href: '/#catalogo', rotulo: 'Catálogo' },
@@ -44,6 +45,7 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
+        <ToggleTema />
       </div>
     </header>
   )

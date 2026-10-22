@@ -60,7 +60,7 @@ export function AboutSection() {
             </p>
           </div>
           <figure className="flex flex-col gap-3">
-            <div className="overflow-hidden rounded-3xl border border-border bg-white">
+            <div className="overflow-hidden rounded-3xl border border-border bg-media-surface">
               <Image
                 src={areaDeEstudo.mapa.src || '/placeholder.svg'}
                 alt={areaDeEstudo.mapa.alt}
