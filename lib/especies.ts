@@ -3,12 +3,12 @@ export type Grupo = 'avifauna' | 'mastofauna'
 export type StatusIUCN = 'LC' | 'NT' | 'VU' | 'EN' | 'CR' | 'DD'
 
 export const statusIUCN: Record<StatusIUCN, { rotulo: string; classe: string }> = {
-  LC: { rotulo: 'Pouco preocupante', classe: 'bg-emerald-500/20 text-emerald-200 ring-emerald-400/40' },
-  NT: { rotulo: 'Quase ameaçada', classe: 'bg-lime-500/20 text-lime-200 ring-lime-400/40' },
-  VU: { rotulo: 'Vulnerável', classe: 'bg-amber-500/20 text-amber-200 ring-amber-400/50' },
-  EN: { rotulo: 'Em perigo', classe: 'bg-orange-500/20 text-orange-200 ring-orange-400/50' },
-  CR: { rotulo: 'Criticamente em perigo', classe: 'bg-red-500/20 text-red-200 ring-red-400/50' },
-  DD: { rotulo: 'Dados insuficientes', classe: 'bg-zinc-500/20 text-zinc-200 ring-zinc-400/40' },
+  LC: { rotulo: 'Pouco preocupante', classe: 'bg-iucn-lc/20 text-iucn-lc-fg ring-iucn-lc-ring/40' },
+  NT: { rotulo: 'Quase ameaçada', classe: 'bg-iucn-nt/20 text-iucn-nt-fg ring-iucn-nt-ring/40' },
+  VU: { rotulo: 'Vulnerável', classe: 'bg-iucn-vu/20 text-iucn-vu-fg ring-iucn-vu-ring/50' },
+  EN: { rotulo: 'Em perigo', classe: 'bg-iucn-en/20 text-iucn-en-fg ring-iucn-en-ring/50' },
+  CR: { rotulo: 'Criticamente em perigo', classe: 'bg-iucn-cr/20 text-iucn-cr-fg ring-iucn-cr-ring/50' },
+  DD: { rotulo: 'Dados insuficientes', classe: 'bg-iucn-dd/20 text-iucn-dd-fg ring-iucn-dd-ring/40' },
 }
 
 export type Credito = {
