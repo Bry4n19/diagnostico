@@ -33,7 +33,7 @@ export function ToggleTema() {
       type="button"
       onClick={alternar}
       aria-label={tema === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
-      className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
+      className="inline-flex size-10 shrink-0 items-center justify-center glass rounded-full text-muted-foreground hover:border-primary/40 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
     >
       {tema === 'dark' ? <Sun aria-hidden="true" className="size-4" /> : <Moon aria-hidden="true" className="size-4" />}
     </button>
