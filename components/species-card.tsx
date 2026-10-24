@@ -5,7 +5,7 @@ import { CreditoFoto, IucnBadge } from '@/components/species-meta'
 
 export function SpeciesCard({ especie, query }: { especie: Especie; query: string }) {
   return (
-    <article className="glass group relative flex w-full flex-col overflow-hidden rounded-2xl p-2 text-on-glass transition hover:-translate-y-0.5 hover:border-primary/60 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
+    <article className="glass-soft group relative flex w-full flex-col overflow-hidden rounded-2xl p-2 text-on-glass transition duration-300 motion-safe:hover:-translate-y-0.5 hover:border-primary/40 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
       <figure className="flex flex-col gap-1.5">
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-on-glass/10">
           <Image

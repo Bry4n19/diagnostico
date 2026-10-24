@@ -90,7 +90,7 @@ export function SpeciesCatalog() {
                   'flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors md:flex-none',
                   ativo
                     ? 'bg-primary text-primary-foreground shadow-sm'
-                    : 'text-on-glass/75 hover:text-primary',
+                    : 'text-on-glass/75 hover:bg-[var(--glass-hover)] hover:text-primary',
                 )}
               >
                 {g.rotulo}
