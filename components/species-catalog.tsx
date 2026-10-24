@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { AudioLines, Search } from 'lucide-react'
+import { AudioLines, Search, X } from 'lucide-react'
 import { especies, type Grupo } from '@/lib/especies'
 import { SpeciesCard } from '@/components/species-card'
 import { cn } from '@/lib/utils'
@@ -13,7 +13,16 @@ const grupos: { id: Grupo; rotulo: string; descricao: string }[] = [
 ]
 
 function normalizar(texto: string) {
-  return texto.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
+  return texto
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[-'’]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .toLowerCase()
+}
+
+function corresponde(e: (typeof especies)[number], termo: string) {
+  return !termo || normalizar(e.nomePopular).includes(termo) || normalizar(e.nomeCientifico).includes(termo)
 }
 
 export function SpeciesCatalog() {
@@ -53,16 +62,15 @@ export function SpeciesCatalog() {
   const resultados = useMemo(
     () =>
       especies
-        .filter((e) => e.grupo === grupo)
-        .filter(
-          (e) =>
-            !termo ||
-            normalizar(e.nomePopular).includes(termo) ||
-            normalizar(e.nomeCientifico).includes(termo),
-        )
+        .filter((e) => e.grupo === grupo && corresponde(e, termo))
         .sort((a, b) => a.nomePopular.localeCompare(b.nomePopular, 'pt-BR')),
     [grupo, termo],
   )
+
+  const outroGrupo = grupos.find((g) => g.id !== grupo)!
+  const noOutroGrupo = termo
+    ? especies.filter((e) => e.grupo === outroGrupo.id && corresponde(e, termo)).length
+    : 0
 
   return (
     <section aria-labelledby="catalogo-titulo" className="flex flex-col gap-6">
@@ -118,8 +126,18 @@ export function SpeciesCatalog() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome popular ou científico"
-            className="glass w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-on-glass placeholder:text-on-glass/65 focus:outline-none focus:ring-2 focus:ring-primary/70"
+            className="glass w-full rounded-full py-2.5 pl-11 pr-11 text-sm text-on-glass placeholder:text-on-glass/65 focus:outline-none focus:ring-2 focus:ring-primary/70 [&::-webkit-search-cancel-button]:hidden"
           />
+          {busca && (
+            <button
+              type="button"
+              onClick={() => setBusca('')}
+              aria-label="Limpar busca"
+              className="absolute right-2 top-1/2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full text-on-glass/80 transition-colors hover:bg-[var(--glass-hover)] hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
+            >
+              <X aria-hidden="true" className="size-4" />
+            </button>
+          )}
         </label>
       </div>
 
@@ -150,8 +168,29 @@ export function SpeciesCatalog() {
           ))}
         </ul>
       ) : (
-        <div className="glass rounded-2xl p-10 text-center text-sm text-on-glass/80">
-          Nenhuma espécie encontrada. Tente outro nome ou verifique a outra categoria.
+        <div className="glass flex flex-col items-center gap-4 rounded-2xl p-10 text-center text-sm text-on-glass/80">
+          <p>
+            Nenhuma espécie de {grupos.find((g) => g.id === grupo)?.descricao.toLowerCase()} corresponde a &ldquo;
+            {busca.trim()}&rdquo;.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {noOutroGrupo > 0 && (
+              <button
+                type="button"
+                onClick={() => setGrupo(outroGrupo.id)}
+                className="rounded-full bg-primary px-5 py-2 font-semibold text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                Ver {noOutroGrupo} {noOutroGrupo === 1 ? 'resultado' : 'resultados'} em {outroGrupo.rotulo}
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => setBusca('')}
+              className="rounded-full border border-on-glass/30 px-5 py-2 font-semibold text-on-glass transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              Limpar busca
+            </button>
+          </div>
         </div>
       )}
     </section>

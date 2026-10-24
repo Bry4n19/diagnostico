@@ -1,4 +1,7 @@
 import { Suspense } from 'react'
+import { MapPin } from 'lucide-react'
+import { site } from '@/lib/site'
+import { IndicadoresCatalogo } from '@/components/indicadores-catalogo'
 import { SpeciesCatalog } from '@/components/species-catalog'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -24,6 +27,14 @@ export default function Page() {
               Aves e mamíferos registrados no levantamento de campo. Cada card apresenta o nome
               popular e o nome científico da espécie, com autoria e classificação taxonômica.
             </p>
+            <p className="mt-4 flex items-center gap-2 text-sm text-foreground">
+              <MapPin aria-hidden="true" className="size-4 text-primary" />
+              <span>
+                Área de estudo: <strong className="font-semibold">{site.areaDeEstudo.nome}</strong>,{' '}
+                {site.areaDeEstudo.local}
+              </span>
+            </p>
+            <IndicadoresCatalogo className="mt-8 max-w-xl" />
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#catalogo"
@@ -35,7 +46,7 @@ export default function Page() {
                 href="#sobre"
                 className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
-                Sobre o TCC
+                Metodologia e referências
               </a>
             </div>
             <AvisoMetodologico className="mt-10 max-w-3xl" />

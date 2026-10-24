@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { FotoEspecie } from '@/components/foto-especie'
 import { AudioLines, Camera, ExternalLink, MapPin } from 'lucide-react'
 import { referenciasDe, type Especie } from '@/lib/especies'
 import { site } from '@/lib/site'
@@ -34,9 +34,25 @@ export function SpeciesDetail({ especie }: { especie: Especie }) {
       conteudo: (
         <div className="flex flex-col gap-4">
           <Paragrafo>{especie.visaoGeral}</Paragrafo>
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <span className="text-muted-foreground">Status de conservação (IUCN):</span>
-            <IucnBadge status={especie.iucn} completo />
+          <div className="flex flex-col gap-2 rounded-2xl border border-border bg-card p-4 text-sm">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-muted-foreground">Status de conservação:</span>
+              <IucnBadge status={especie.iucn} completo />
+            </div>
+            <dl className="grid gap-x-6 gap-y-1 text-xs text-muted-foreground sm:grid-cols-3">
+              <div className="flex gap-1">
+                <dt>Fonte:</dt>
+                <dd className="text-foreground">Lista Vermelha da IUCN</dd>
+              </div>
+              <div className="flex gap-1">
+                <dt>Abrangência:</dt>
+                <dd className="text-foreground">global</dd>
+              </div>
+              <div className="flex gap-1">
+                <dt>Data de consulta:</dt>
+                <dd>não informada</dd>
+              </div>
+            </dl>
           </div>
         </div>
       ),
@@ -129,13 +145,11 @@ export function SpeciesDetail({ especie }: { especie: Especie }) {
       <div className="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-start lg:gap-12">
         <figure className="flex flex-col gap-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-card">
-            <Image
-              src={especie.foto || '/placeholder.svg'}
+            <FotoEspecie
+              src={especie.foto}
               alt={especie.descricaoFoto}
-              fill
               priority
               sizes="(min-width: 1152px) 620px, (min-width: 1024px) 55vw, 100vw"
-              className="object-cover"
             />
           </div>
           <figcaption>
