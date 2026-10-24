@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { FotoEspecie } from '@/components/foto-especie'
 import type { Especie } from '@/lib/especies'
 import { CreditoFoto, IucnBadge } from '@/components/species-meta'
 
@@ -8,13 +9,11 @@ export function SpeciesCard({ especie, query }: { especie: Especie; query: strin
     <article className="glass-soft group relative flex w-full flex-col overflow-hidden rounded-2xl p-2 text-on-glass transition duration-300 motion-safe:hover:-translate-y-0.5 hover:border-primary/40 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
       <figure className="flex flex-col gap-1.5">
         <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-on-glass/10">
-          <Image
-            src={especie.foto || '/placeholder.svg'}
+          <FotoEspecie
+            src={especie.foto}
             alt={especie.descricaoFoto}
-            fill
-            loading="lazy"
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="transition duration-500 motion-safe:group-hover:scale-[1.03]"
           />
         </div>
         <figcaption className="px-1">
@@ -38,9 +37,20 @@ export function SpeciesCard({ especie, query }: { especie: Especie; query: strin
           <i className="font-medium">{especie.nomeCientifico}</i>{' '}
           <span className="text-on-glass/70">{especie.autoria}</span>
         </p>
-        <p className="mt-auto border-t border-on-glass/20 pt-3 text-xs uppercase tracking-wide text-on-glass/70">
-          {especie.ordem} · {especie.familia}
-        </p>
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-on-glass/20 pt-3 text-xs text-on-glass/70">
+          <p className="uppercase tracking-wide">
+            <span className="sr-only">Grupo: </span>
+            {especie.grupo === 'avifauna' ? 'Ave' : 'Mamífero'} · <span className="sr-only">Família: </span>
+            {especie.familia}
+          </p>
+          <span
+            aria-hidden="true"
+            className="flex items-center gap-1 font-medium text-on-glass/80 transition-colors group-hover:text-primary"
+          >
+            Ver ficha
+            <ArrowRight className="size-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </span>
+        </div>
       </div>
     </article>
   )

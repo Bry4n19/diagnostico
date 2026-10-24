@@ -1,19 +1,10 @@
 import Image from 'next/image'
 import { MapPin } from 'lucide-react'
-import { especies } from '@/lib/especies'
 import { site } from '@/lib/site'
 import { AvisoMetodologico } from '@/components/methodology-note'
 
 export function AboutSection() {
   const { areaDeEstudo, sobre } = site
-  const aves = especies.filter((e) => e.grupo === 'avifauna').length
-  const mamiferos = especies.filter((e) => e.grupo === 'mastofauna').length
-
-  const numeros = [
-    { valor: especies.length, rotulo: 'espécies catalogadas' },
-    { valor: aves, rotulo: aves === 1 ? 'ave' : 'aves' },
-    { valor: mamiferos, rotulo: mamiferos === 1 ? 'mamífero' : 'mamíferos' },
-  ]
 
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="scroll-mt-20 border-t border-border">
@@ -24,14 +15,19 @@ export function AboutSection() {
             <h2 id="sobre-titulo" className="text-3xl font-semibold tracking-tight text-balance md:text-4xl">
               O que é este projeto
             </h2>
-            <dl className="mt-4 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border bg-border">
-              {numeros.map((n) => (
-                <div key={n.rotulo} className="flex flex-col gap-1 bg-card p-5">
-                  <dt className="order-2 text-xs uppercase tracking-wide text-muted-foreground">{n.rotulo}</dt>
-                  <dd className="order-1 text-3xl font-semibold text-primary md:text-4xl">{n.valor}</dd>
-                </div>
-              ))}
-            </dl>
+            <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-border bg-card p-5 text-sm">
+              <h3 className="font-semibold text-foreground">Métodos de registro</h3>
+              <ul className="flex flex-col gap-2 leading-relaxed text-muted-foreground">
+                <li>
+                  <span className="font-medium text-foreground">Avifauna:</span> identificação por vocalização, com
+                  apoio dos aplicativos eBird e Merlin Bird ID.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Mastofauna:</span> armadilhas fotográficas instaladas
+                  na área de estudo.
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="flex flex-col gap-5">
