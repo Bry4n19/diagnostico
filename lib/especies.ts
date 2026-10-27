@@ -229,7 +229,7 @@ const aves: Linha[] = [
     'Pequena ave parda de garganta branca e asas com faixas claras, pousada em um arame farpado.',
     'Pequeno tiranídeo de capoeiras, pastos sujos e bordas de mata, que captura insetos.',
     'Possui uma mancha amarela escondida no alto da cabeça, exibida quando está agitado.'],
-  ['gaturamo-verdadeiro', 'Gaturamo-verdadeiro', 'Euphonia chlorotica', '(Linnaeus, 1766)', 'Passeriformes', 'Fringillidae', 'LC',
+  ['fim-fim', 'Fim-fim', 'Euphonia chlorotica', '(Linnaeus, 1766)', 'Passeriformes', 'Fringillidae', 'LC',
     'Pequena ave de dorso azul-escuro, ventre e fronte amarelos, pousada em um galho.',
     'Pequena ave de bordas de mata e áreas arborizadas, que se alimenta de frutos, principalmente de erva-de-passarinho.',
     'Ajuda a espalhar as sementes da erva-de-passarinho, que germinam nos galhos das árvores.'],
@@ -249,6 +249,94 @@ const aves: Linha[] = [
     'Ave de plumagem marrom-avermelhada e garganta clara, com cauda alaranjada.',
     'Ave de áreas abertas, campos e cidades, que procura insetos caminhando pelo chão.',
     'Constrói ninhos de barro em forma de forno, com uma divisória interna que protege os ovos.'],
+  ['lavadeira-mascarada', 'Lavadeira-mascarada', 'Fluvicola nengeta', '(Linnaeus, 1766)', 'Passeriformes', 'Tyrannidae', 'LC',
+    'Ave branca de asas pardas e faixa preta atravessando o olho, pousada sobre um tronco.',
+    'Tiranídeo de margens de lagos, rios e áreas úmidas, também comum em gramados urbanos.',
+    'Abre e fecha a cauda de ponta preta com frequência enquanto caça insetos no chão.'],
+  ['maria-cavaleira', 'Maria-cavaleira', 'Myiarchus ferox', '(Gmelin, 1789)', 'Passeriformes', 'Tyrannidae', 'LC',
+    'Ave de cabeça pardo-escura levemente eriçada, garganta cinza-clara e ventre amarelo-claro, pousada em galhos secos.',
+    'Tiranídeo de bordas de mata, capoeiras e áreas arborizadas, que caça insetos a partir de poleiros.',
+    'Faz o ninho em ocos de árvores ou cavidades abandonadas por pica-paus.'],
+  ['mariquita', 'Mariquita', 'Setophaga pitiayumi', '(Vieillot, 1817)', 'Passeriformes', 'Parulidae', 'LC',
+    'Pequena ave de dorso cinza-azulado, máscara escura, faixa branca na asa e peito amarelo-alaranjado, pousada em um galho fino.',
+    'Pequena ave de copas de árvores, que procura insetos entre folhas e barbas-de-velho.',
+    'Constrói o ninho escondido dentro de tufos de barba-de-velho (Tillandsia usneoides).'],
+  ['neinei', 'Neinei', 'Megarynchus pitangua', '(Linnaeus, 1766)', 'Passeriformes', 'Tyrannidae', 'LC',
+    'Ave de ventre amarelo, cabeça com faixas preta e branca e bico largo e escuro, pousada em um galho.',
+    'Tiranídeo de bordas de mata e áreas arborizadas, parecido com o bem-te-vi, mas de bico bem mais largo.',
+    'O nome imita o chamado anasalado e repetido, muito diferente do canto do bem-te-vi.'],
+  ['papagaio-verdadeiro', 'Papagaio-verdadeiro', 'Amazona aestiva', '(Linnaeus, 1758)', 'Psittaciformes', 'Psittacidae', 'NT',
+    'Papagaio verde com fronte azul-turquesa, face amarela e mancha vermelha na asa, pousado em um tronco seco contra o céu.',
+    'Papagaio de matas, cerrados e áreas abertas arborizadas, que vive em casais ou bandos.',
+    'É uma das aves mais capturadas pelo tráfico de animais silvestres no Brasil.'],
+  ['periquitao', 'Periquitão', 'Psittacara leucophthalmus', '(Statius Muller, 1776)', 'Psittaciformes', 'Psittacidae', 'LC',
+    'Periquito grande todo verde, com pequenas manchas vermelhas na cabeça e no encontro da asa, pousado em um galho.',
+    'Periquito de grande porte comum em matas, bordas e cidades, onde forma bandos barulhentos.',
+    'Costuma dormir em grandes grupos em árvores altas, palmeiras ou até em vãos de prédios.'],
+  ['periquito-de-encontro-amarelo', 'Periquito-de-encontro-amarelo', 'Brotogeris chiriri', '(Vieillot, 1818)', 'Psittaciformes', 'Psittacidae', 'LC',
+    'Periquitos verdes com mancha amarela na asa, comendo sementes em um comedouro de madeira.',
+    'Periquito de cerrados, matas secas e áreas urbanas arborizadas, que vive em bandos.',
+    'A faixa amarela no “encontro” da asa fica bem visível em voo.'],
+  ['periquito-rico', 'Periquito-rico', 'Brotogeris tirica', '(Gmelin, 1788)', 'Psittaciformes', 'Psittacidae', 'LC',
+    'Periquito todo verde de cauda longa e bico claro, pousado na ponta de um galho contra o céu azul.',
+    'Periquito endêmico da Mata Atlântica, comum também em parques e áreas urbanas.',
+    'Alimenta-se de frutos, sementes, flores e néctar, visitando árvores floridas em bandos.'],
+  ['pia-cobra', 'Pia-cobra', 'Geothlypis aequinoctialis', '(Gmelin, 1789)', 'Passeriformes', 'Parulidae', 'LC',
+    'Pequena ave de dorso verde-oliva, ventre amarelo e máscara preta com coroa cinza, pousada em um galho fino.',
+    'Pequena ave de capinzais, brejos e vegetação densa próxima à água.',
+    'Só o macho tem a máscara preta; a fêmea tem a face acinzentada.'],
+  ['pintassilgo', 'Pintassilgo', 'Spinus magellanicus', '(Vieillot, 1805)', 'Passeriformes', 'Fringillidae', 'LC',
+    'Pequena ave amarela de cabeça preta e asas pretas com faixas amarelas, pousada em um arame.',
+    'Pequena ave granívora de campos, bordas de mata e áreas abertas.',
+    'Muito visado pelo tráfico por causa do canto, o que reduziu suas populações em várias regiões.'],
+  ['pitiguari', 'Pitiguari', 'Cyclarhis gujanensis', '(Gmelin, 1789)', 'Passeriformes', 'Vireonidae', 'LC',
+    'Ave de cabeça cinza com sobrancelha ferrugínea, olho vermelho, peito amarelo e bico robusto, pousada em um galho.',
+    'Ave de copas de árvores, mais ouvida do que vista, que caça lagartas e outros insetos.',
+    'Seu canto forte e repetitivo é um dos sons mais comuns em matas e parques.'],
+  ['pomba-asa-branca', 'Pomba-asa-branca', 'Patagioenas picazuro', '(Temminck, 1813)', 'Columbiformes', 'Columbidae', 'LC',
+    'Pomba grande de plumagem vinácea, pescoço com escamas claras, olho alaranjado e pés vermelhos, caminhando no chão.',
+    'Pomba grande de áreas abertas, campos e cidades, que se alimenta de sementes e grãos.',
+    'A faixa branca na asa, visível principalmente em voo, dá nome à espécie.'],
+  ['risadinha', 'Risadinha', 'Camptostoma obsoletum', '(Temminck, 1824)', 'Passeriformes', 'Tyrannidae', 'LC',
+    'Pequena ave cinzenta com garganta clara e asas com faixas brancas, pousada em um galho com folhas.',
+    'Um dos menores tiranídeos do Brasil, comum em bordas de mata, cerrados e jardins.',
+    'O canto descendente lembra uma risada curta, o que deu origem ao nome popular.'],
+  ['rolinha-roxa', 'Rolinha-roxa', 'Columbina talpacoti', '(Temminck, 1810)', 'Columbiformes', 'Columbidae', 'LC',
+    'Pequena pomba de plumagem castanho-rosada, cabeça acinzentada e pintas escuras nas asas, pousada sobre um toco.',
+    'Pequena pomba muito comum em áreas abertas e cidades, que procura sementes no chão.',
+    'Reproduz-se quase o ano todo e pode criar várias ninhadas em sequência.'],
+  ['sabia-do-campo', 'Sabiá-do-campo', 'Mimus saturninus', '(Lichtenstein, 1823)', 'Passeriformes', 'Mimidae', 'LC',
+    'Ave parda de sobrancelha clara e cauda longa, caminhando sobre o asfalto.',
+    'Ave de campos, cerrados e áreas abertas, frequente em gramados urbanos.',
+    'É capaz de imitar o canto de outras aves, característica comum aos mimídeos.'],
+  ['sai-andorinha', 'Saí-andorinha', 'Tersina viridis', '(Illiger, 1811)', 'Passeriformes', 'Thraupidae', 'LC',
+    'Fêmea de plumagem verde com flancos barrados, pousada entre galhos.',
+    'Ave de bordas de mata e áreas arborizadas, que se alimenta de frutos e insetos capturados em voo.',
+    'O macho é azul-turquesa com máscara preta; a fêmea é verde, como a da foto.'],
+  ['sanhaco-cinzento', 'Sanhaço-cinzento', 'Thraupis sayaca', '(Linnaeus, 1766)', 'Passeriformes', 'Thraupidae', 'LC',
+    'Ave cinza-azulada comendo um mamão maduro.',
+    'Um dos pássaros mais comuns em cidades, parques e bordas de mata, com dieta rica em frutos.',
+    'Visita com frequência comedouros com frutas e ajuda a dispersar sementes.'],
+  ['sanhaco-do-coqueiro', 'Sanhaço-do-coqueiro', 'Thraupis palmarum', '(Wied-Neuwied, 1821)', 'Passeriformes', 'Thraupidae', 'LC',
+    'Ave verde-oliva com reflexos amarelados, pousada em um galho entre folhagens.',
+    'Ave de áreas arborizadas e cidades, muito associada a palmeiras e coqueiros.',
+    'Costuma procurar insetos e frutos entre as folhas das palmeiras, onde também faz o ninho.'],
+  ['tie-preto', 'Tiê-preto', 'Tachyphonus coronatus', '(Vieillot, 1822)', 'Passeriformes', 'Thraupidae', 'LC',
+    'Macho de plumagem toda preta e brilhante, pousado em um galho.',
+    'Ave de bordas de mata e capoeiras da Mata Atlântica, que come frutos e insetos.',
+    'O macho tem uma coroa vermelha escondida, exibida apenas quando está agitado; a fêmea é ferrugínea.'],
+  ['trinca-ferro', 'Trinca-ferro', 'Saltator similis', "d'Orbigny & Lafresnaye, 1837", 'Passeriformes', 'Thraupidae', 'LC',
+    'Ave de dorso esverdeado, cabeça cinza e sobrancelha branca, pousada em um galho.',
+    'Ave de bordas de mata e capoeiras, que se alimenta de frutos, folhas e sementes.',
+    'O bico forte, capaz de quebrar sementes duras, deu origem ao nome; é muito visado pelo tráfico.'],
+  ['tucano-de-bico-verde', 'Tucano-de-bico-verde', 'Ramphastos dicolorus', 'Linnaeus, 1766', 'Piciformes', 'Ramphastidae', 'LC',
+    'Tucano de bico verde-claro, peito amarelo-alaranjado e ventre vermelho, pousado em um galho.',
+    'Tucano da Mata Atlântica, que se alimenta de frutos, insetos e ocasionalmente ovos e filhotes de outras aves.',
+    'É um importante dispersor de sementes de palmeiras, como a do palmito-juçara.'],
+  ['tucanucu', 'Tucanuçu', 'Ramphastos toco', 'Statius Muller, 1776', 'Piciformes', 'Ramphastidae', 'LC',
+    'Tucano preto de garganta branca e enorme bico alaranjado com mancha preta na ponta, pousado em um galho.',
+    'Maior tucano do mundo, comum em cerrados, matas abertas e áreas urbanas arborizadas.',
+    'O bico, apesar de grande, é leve e ajuda a regular a temperatura do corpo.'],
 ]
 
 const mamiferos: Linha[] = [
@@ -264,7 +352,7 @@ const mamiferos: Linha[] = [
     'Tatu com carapaça de cintas transversais e cauda longa forrageando no folhiço, registrado à noite por armadilha fotográfica com infravermelho.',
     'Tatu de ampla distribuição nas Américas, que escava tocas e se alimenta de invertebrados do solo.',
     'A fêmea costuma gerar quatro filhotes idênticos, originados de um único óvulo.'],
-  ['gamba', 'Gambá', 'Didelphis aurita', '(Wied-Neuwied, 1826)', 'Didelphimorphia', 'Didelphidae', 'LC',
+  ['gamba', 'Gambá-de-orelha-branca', 'Didelphis albiventris', 'Lund, 1840', 'Didelphimorphia', 'Didelphidae', 'LC',
     'Marsupial de pelagem escura, face clara com listras e cauda longa enrolada, caminhando no folhiço à noite diante da armadilha fotográfica.',
     'Marsupial onívoro e noturno, comum em matas e também em áreas urbanas.',
     'Tem resistência a venenos de algumas serpentes e ajuda a controlar populações de animais peçonhentos.'],
@@ -276,21 +364,30 @@ const mamiferos: Linha[] = [
     'Grande roedor de focinho largo e orelhas pequenas sentado ao lado de um tronco caído, registrado à noite por armadilha fotográfica com infravermelho.',
     'Maior roedor do mundo, vive em grupos próximos a rios, lagos e áreas alagadas.',
     'Tem membranas entre os dedos, que ajudam a nadar, e pode ficar alguns minutos submersa.'],
+  ['gato-maracaja', 'Gato-maracajá', 'Leopardus wiedii', '(Schinz, 1821)', 'Carnivora', 'Felidae', 'VU',
+    'Imagem pendente: ainda não há fotografia confiável desta espécie no acervo.',
+    'Felino pequeno e arborícola de matas, com olhos grandes e cauda longa que ajudam no equilíbrio entre os galhos.',
+    'Consegue girar os tornozelos traseiros e descer de árvores de cabeça para baixo, como um esquilo.'],
 ]
 
 /** Fotos registradas pela própria equipe. As demais aguardam confirmação de origem. */
 const fotosProprias = new Set(['tie-sangue', 'paca', 'gato-do-mato', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara'])
 
-/**
- * Espécies com foto em .jpg. Alma-de-gato, andorinha-serradora, irerê e
- * joão-de-barro ainda não têm foto: basta salvar /public/especies/<id>.jpg
- * que a imagem substitui automaticamente o espaço reservado.
- */
-const fotosJpg = new Set([
-  'alma-de-gato', 'andorinha-serradora', 'anu-branco', 'arapacu-do-cerrado', 'bem-te-vi', 'bem-te-vi-rajado',
-  'bico-chato-de-orelha-preta', 'bico-de-lacre', 'cambacica', 'canario-da-terra', 'carao', 'carrapateiro',
-  'corruira', 'encontro', 'filipe', 'gaturamo-verdadeiro', 'guaracava-grande', 'irere', 'jacana', 'joao-de-barro',
+/** Espécies com foto em .png; as demais usam /public/especies/<id>.jpg. */
+const fotosPng = new Set([
+  'tie-sangue', 'carcara', 'andorinha-grande', 'joao-tenenem', 'anu-preto', 'pica-pau-de-cabeca-amarela',
+  'galinha-dagua', 'sabia-poca', 'guaracava-de-barriga-amarela', 'saci', 'pica-pau-branco', 'peitica', 'jacuguacu',
+  'sabia-laranjeira', 'gaviao-carijo', 'tico-tico', 'juruviara', 'andorinha-pequena-de-casa', 'suiriri',
+  'andorinhao-do-temporal', 'paca', 'gato-do-mato', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara',
 ])
+
+/** Sem fotografia confiável: o card exibe "Imagem pendente". */
+export const imagensPendentes = new Set(['gato-maracaja'])
+
+function caminhoFoto(id: string) {
+  if (imagensPendentes.has(id)) return ''
+  return `/especies/${id}.${fotosPng.has(id) ? 'png' : 'jpg'}`
+}
 
 function criar(grupo: Grupo) {
   return ([id, nomePopular, nomeCientifico, autoria, ordem, familia, iucn, descricaoFoto, visaoGeral, curiosidade]: Linha): Especie => ({
@@ -302,7 +399,7 @@ function criar(grupo: Grupo) {
     ordem,
     familia,
     iucn,
-    foto: `/especies/${id}.${fotosJpg.has(id) ? 'jpg' : 'png'}`,
+    foto: caminhoFoto(id),
     descricaoFoto,
     credito: fotosProprias.has(id) ? registroProprio : undefined,
     visaoGeral,
