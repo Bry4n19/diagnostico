@@ -78,7 +78,7 @@ const aves: Linha[] = [
     'Pássaro endêmico do Brasil, típico de bordas de mata e capoeiras próximas à água na Mata Atlântica.',
     'Só o macho tem o vermelho intenso; a fêmea é parda, o que ajuda na camuflagem durante o período no ninho.'],
   ['carcara', 'Carcará', 'Caracara plancus', '(Miller, 1777)', 'Falconiformes', 'Falconidae', 'LC',
-    'Ave de rapina em perfil, com penas escuras no alto da cabeça, bico curvo azulado e pescoço com penas claras rajadas, à beira da água.',
+    'Ave de rapina em perfil, com boné preto, face alaranjada, bico curvo acinzentado e pernas amarelas, pousada no alto de um mourão de cerca contra o céu azul.',
     'Ave de rapina generalista e oportunista, comum em áreas abertas, pastagens e ambientes urbanos.',
     'Apesar do aspecto de gavião, é parente dos falcões e costuma caminhar pelo chão à procura de alimento.'],
   ['andorinha-grande', 'Andorinha-grande', 'Progne chalybea', '(Gmelin, 1789)', 'Passeriformes', 'Hirundinidae', 'LC',
@@ -314,7 +314,7 @@ const aves: Linha[] = [
     'Ave de bordas de mata e áreas arborizadas, que se alimenta de frutos e insetos capturados em voo.',
     'O macho é azul-turquesa com máscara preta; a fêmea é verde, como a da foto.'],
   ['sanhaco-cinzento', 'Sanhaço-cinzento', 'Thraupis sayaca', '(Linnaeus, 1766)', 'Passeriformes', 'Thraupidae', 'LC',
-    'Ave cinza-azulada comendo um mamão maduro.',
+    'Ave de cabeça e corpo cinza com asas e cauda azul-esverdeadas, pousada em um galho retorcido diante de fundo escuro.',
     'Um dos pássaros mais comuns em cidades, parques e bordas de mata, com dieta rica em frutos.',
     'Visita com frequência comedouros com frutas e ajuda a dispersar sementes.'],
   ['sanhaco-do-coqueiro', 'Sanhaço-do-coqueiro', 'Thraupis palmarum', '(Wied-Neuwied, 1821)', 'Passeriformes', 'Thraupidae', 'LC',
@@ -344,10 +344,6 @@ const mamiferos: Linha[] = [
     'Roedor de porte médio com fileiras de manchas claras na lateral do corpo, registrado à noite por armadilha fotográfica com infravermelho.',
     'Roedor noturno de matas próximas a cursos d’água, que se alimenta de frutos, sementes e raízes.',
     'É uma ótima nadadora e costuma fugir para a água quando se sente ameaçada.'],
-  ['gato-do-mato', 'Gato-do-mato-pequeno', 'Leopardus guttulus', '(Hensel, 1872)', 'Carnivora', 'Felidae', 'VU',
-    'Pequeno felino de pelagem manchada caminhando entre a vegetação, com os olhos refletindo a luz infravermelho da armadilha fotográfica à noite.',
-    'Um dos menores felinos do Brasil, associado a ambientes florestais da Mata Atlântica.',
-    'Até 2013 era considerado a mesma espécie que Leopardus tigrinus; estudos genéticos mostraram que são espécies distintas.'],
   ['tatu-galinha', 'Tatu-galinha', 'Dasypus novemcinctus', 'Linnaeus, 1758', 'Cingulata', 'Dasypodidae', 'LC',
     'Tatu com carapaça de cintas transversais e cauda longa forrageando no folhiço, registrado à noite por armadilha fotográfica com infravermelho.',
     'Tatu de ampla distribuição nas Américas, que escava tocas e se alimenta de invertebrados do solo.',
@@ -365,24 +361,39 @@ const mamiferos: Linha[] = [
     'Maior roedor do mundo, vive em grupos próximos a rios, lagos e áreas alagadas.',
     'Tem membranas entre os dedos, que ajudam a nadar, e pode ficar alguns minutos submersa.'],
   ['gato-maracaja', 'Gato-maracajá', 'Leopardus wiedii', '(Schinz, 1821)', 'Carnivora', 'Felidae', 'VU',
-    'Imagem pendente: ainda não há fotografia confiável desta espécie no acervo.',
+    'Pequeno felino de pelagem manchada caminhando entre a vegetação, com os olhos refletindo a luz infravermelho da armadilha fotográfica à noite.',
     'Felino pequeno e arborícola de matas, com olhos grandes e cauda longa que ajudam no equilíbrio entre os galhos.',
     'Consegue girar os tornozelos traseiros e descer de árvores de cabeça para baixo, como um esquilo.'],
+  ['caxinguele', 'Caxinguelê', 'Guerlinguetus aestuans', '(Linnaeus, 1766)', 'Rodentia', 'Sciuridae', 'LC',
+    'Esquilo de pelagem parda e cauda longa e peluda erguida, sobre um tronco caído coberto de musgo no chão da mata, registrado de dia por armadilha fotográfica.',
+    'Único esquilo nativo da Mata Atlântica, ativo durante o dia e que vive entre as copas e o chão da floresta.',
+    'Enterra sementes para comer depois e, ao esquecer parte delas, ajuda a regenerar a floresta.'],
+  ['ratao-do-banhado', 'Ratão-do-banhado', 'Myocastor coypus', '(Molina, 1782)', 'Rodentia', 'Echimyidae', 'LC',
+    'Roedor grande de pelagem marrom molhada e longos bigodes brancos, sentado sobre um tronco na água.',
+    'Roedor semiaquático de rios, lagos e banhados, que se alimenta principalmente de plantas aquáticas.',
+    'Tem os dentes incisivos alaranjados e as narinas e mamas posicionadas no alto do corpo, adaptações à vida na água.'],
+  ['tapiti', 'Tapiti', 'Sylvilagus brasiliensis', '(Linnaeus, 1758)', 'Lagomorpha', 'Leporidae', 'EN',
+    'Pequeno coelho de orelhas eretas parado no chão da mata, com os olhos refletindo a luz infravermelho da armadilha fotográfica à noite.',
+    'Único coelho nativo do Brasil, de hábitos crepusculares e noturnos, que vive em bordas de mata e campos.',
+    'É menor que o coelho doméstico e tem a cauda tão curta que quase não aparece.'],
 ]
 
 /** Fotos registradas pela própria equipe. As demais aguardam confirmação de origem. */
-const fotosProprias = new Set(['tie-sangue', 'paca', 'gato-do-mato', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara'])
+const fotosProprias = new Set([
+  'tie-sangue', 'carcara', 'paca', 'gato-maracaja', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara', 'caxinguele', 'tapiti',
+])
 
 /** Espécies com foto em .png; as demais usam /public/especies/<id>.jpg. */
 const fotosPng = new Set([
   'tie-sangue', 'carcara', 'andorinha-grande', 'joao-tenenem', 'anu-preto', 'pica-pau-de-cabeca-amarela',
   'galinha-dagua', 'sabia-poca', 'guaracava-de-barriga-amarela', 'saci', 'pica-pau-branco', 'peitica', 'jacuguacu',
   'sabia-laranjeira', 'gaviao-carijo', 'tico-tico', 'juruviara', 'andorinha-pequena-de-casa', 'suiriri',
-  'andorinhao-do-temporal', 'paca', 'gato-do-mato', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara',
+  'andorinhao-do-temporal', 'paca', 'gato-maracaja', 'tatu-galinha', 'gamba', 'cachorro-do-mato', 'capivara',
+  'caxinguele', 'ratao-do-banhado', 'tapiti',
 ])
 
 /** Sem fotografia confiável: o card exibe "Imagem pendente". */
-export const imagensPendentes = new Set(['gato-maracaja'])
+export const imagensPendentes = new Set<string>()
 
 function caminhoFoto(id: string) {
   if (imagensPendentes.has(id)) return ''
