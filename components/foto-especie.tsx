@@ -15,16 +15,17 @@ type Props = {
 
 export function FotoEspecie({ src, alt, sizes, priority = false, className }: Props) {
   const [falhou, setFalhou] = useState(!src)
+  const rotulo = src ? 'Imagem indisponível' : 'Imagem pendente'
 
   if (falhou) {
     return (
       <div
         role="img"
-        aria-label={`Imagem indisponível. ${alt}`}
+        aria-label={`${rotulo}. ${alt}`}
         className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-muted text-muted-foreground"
       >
         <ImageOff aria-hidden="true" className="size-6" />
-        <span className="text-xs">Imagem indisponível</span>
+        <span className="text-xs">{rotulo}</span>
       </div>
     )
   }

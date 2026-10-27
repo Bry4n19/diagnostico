@@ -1,11 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import type { Especie } from '@/lib/especies'
-
-const FOTO_FALLBACK = '/especies/placeholder.jpg'
+import { FotoEspecie } from '@/components/foto-especie'
 
 const coresIucn: Record<string, { rotulo: string; classe: string }> = {
   LC: { rotulo: 'Pouco preocupante', classe: 'bg-green-600 text-white' },
@@ -18,20 +15,16 @@ const coresIucn: Record<string, { rotulo: string; classe: string }> = {
 }
 
 export function CardEspecie({ especie }: { especie: Especie }) {
-  const [foto, setFoto] = useState(especie.foto || FOTO_FALLBACK)
   const iucn = coresIucn[especie.iucn] ?? coresIucn.NE
 
   return (
     <article className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-2 text-white transition hover:-translate-y-0.5 hover:border-primary/60 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-primary">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white/10">
-        <Image
-          src={foto}
+        <FotoEspecie
+          src={especie.foto}
           alt={especie.descricaoFoto}
-          fill
-          loading="lazy"
           sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition duration-500 group-hover:scale-[1.03]"
-          onError={() => setFoto((atual) => (atual === FOTO_FALLBACK ? atual : FOTO_FALLBACK))}
+          className="transition duration-500 group-hover:scale-[1.03]"
         />
       </div>
 
